@@ -1,0 +1,1 @@
+json.partial! "api_characters/api_character", api_character: @api_character
