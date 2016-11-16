@@ -11,7 +11,7 @@
   <tbody>
     <% @characters.each do |character| %>
       <tr>
-        <th><%= character.code %></th>
+        <th><%= link_to character.code, character_path(id: character.id) %></th>
         <td><%= character.name %></td>
         <td><%= character.description %></td>
         <td><%= character.created_at %></td>

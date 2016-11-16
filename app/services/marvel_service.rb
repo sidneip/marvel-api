@@ -23,7 +23,7 @@ class MarvelService
   end
 
   def get_character(id)
-    response = self.class.get("/characters/#{id}")['data']['results']
+    response = self.class.get("/characters/#{id}", query: { apikey: public_key, hash: hash, ts: 1})
     raise AuthError if response.code != 200
     response
   end

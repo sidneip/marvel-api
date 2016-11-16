@@ -6,6 +6,6 @@ class CharactersController < ApplicationController
   def show
     @character = Character.find params[:id]
     character_service = MarvelService.new(session[:public_key], session[:private_key])
-    @character_request = character_service.get_character(params[:id])
+    @character_request = character_service.get_character(@character.code)
   end
 end
