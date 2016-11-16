@@ -1,0 +1,7 @@
+<h1>Login</h1>
+
+<%= form_tag logins_path, format: :post do %>
+  <%= text_field_tag "login[public_key]" %>
+  <%= text_field_tag "login[private_key]" %>
+  <%= submit_tag 'Entrar' %>
+<% end %>

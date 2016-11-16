@@ -1,0 +1,11 @@
+defaults: &defaults
+  url: http://gateway.marvel.com/v1/public/
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
