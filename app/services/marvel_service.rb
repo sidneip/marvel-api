@@ -23,11 +23,13 @@ class MarvelService
   end
 
   def get_character(id)
-    self.class.get("/characters/#{id}")['data']['results']
+    response = self.class.get("/characters/#{id}")['data']['results']
+    raise AuthError if response.code != 200
+    response
   end
 
   def get_all_characters(page = 1, characters = [])
-    response = get_characters
+    response = get_characters(page)
     pages = (response['data']['total'].to_f / 100.to_f).ceil
     results = (characters << response['data']['results']).flatten!
     get_all_characters(page + 1, results) if page < pages

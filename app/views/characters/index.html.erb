@@ -1,0 +1,23 @@
+<h1>Personagens</h1>
+<table class="table table-inverse">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th>Ultima Atualização</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @characters.each do |character| %>
+      <tr>
+        <th><%= character.code %></th>
+        <td><%= character.name %></td>
+        <td><%= character.description %></td>
+        <td><%= character.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @characters %>
+

@@ -5,5 +5,7 @@ Rails.application.routes.draw do
       get :auth_error
     end
   end
+
+  resources :characters, only: [:index, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
