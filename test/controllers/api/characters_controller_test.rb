@@ -15,7 +15,7 @@ class Api::CharactersControllerTest < ActionDispatch::IntegrationTest
       post api_characters_url, params: { character: { name: 'teste', description: 'abc' } }, as: :json
     end
 
-    assert_response :succes
+    assert_response :success
   end
 
   test "should show api_character" do
@@ -23,14 +23,9 @@ class Api::CharactersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
-    get edit_api_character_url(@character), as: :json
-    assert_response :success
-  end
-
   test "should update api_character" do
-    patch api_character_url(@character), params: { character: {  } }, as: :json
-    assert_redirected_to api_character_url(@character)
+    patch api_character_url(@character), params: { character: { name: 'abc' } }, as: :json
+    assert_response 201
   end
 
   test "should destroy api_character" do
@@ -38,6 +33,6 @@ class Api::CharactersControllerTest < ActionDispatch::IntegrationTest
       delete api_character_url(@character), as: :json
     end
 
-    assert_redirected_to api_characters_url
+    assert_response 204
   end
 end

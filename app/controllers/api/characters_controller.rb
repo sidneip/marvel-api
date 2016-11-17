@@ -10,10 +10,7 @@ class Api::CharactersController < ApplicationController
   # GET /api/characters/1
   # GET /api/characters/1.json
   def show
-  end
-
-  # GET /api/characters/1/edit
-  def edit
+    render json: @character
   end
 
   # POST /api/characters
@@ -30,21 +27,20 @@ class Api::CharactersController < ApplicationController
   # PATCH/PUT /api/characters/1
   # PATCH/PUT /api/characters/1.json
   def update
-    respond_to do |format|
-      if @character.update(character_params)
-        format.json { render :show, status: :ok, location: @character }
-      else
-        format.json { render json: @character.errors, status: :unprocessable_entity }
-      end
+    if @character.update(character_params)
+      render json: @character, status: 201, location: @character
+    else
+      render json: @character.errors, status: :unprocessable_entity
     end
   end
 
   # DELETE /api/characters/1
   # DELETE /api/characters/1.json
   def destroy
-    @character.destroy
-    respond_to do |format|
-      format.json { head :no_content }
+    if @character.destroy
+      head :no_content
+    else
+      render json: @character.errors, status: :unprocessable_entity
     end
   end
 
@@ -56,6 +52,6 @@ class Api::CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.fetch(:character, {})
+      params.require(:character).permit(:name, :description)
     end
 end
