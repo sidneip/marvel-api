@@ -1,24 +1,18 @@
-# README
+# Marvel
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Marvel http://ec2-35-163-123-62.us-west-2.compute.amazonaws.com:81](http://ec2-35-163-123-62.us-west-2.compute.amazonaws.com:81)
 
-Things you may want to cover:
+## Install
+`
+bundle install
+`
 
-* Ruby version
+## Run Tests
+`
+rails test
+`
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Run Sever
+`
+rails server
+`
