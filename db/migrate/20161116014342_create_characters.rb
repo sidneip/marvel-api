@@ -4,7 +4,7 @@ class CreateCharacters < ActiveRecord::Migration[5.0]
       t.string :name
       t.text :description
       t.string :code
-
+      t.string :thumbnail
       t.timestamps
     end
   end

@@ -1,1 +1,0 @@
-json.array! @api_characters, partial: 'api_characters/api_character', as: :api_character

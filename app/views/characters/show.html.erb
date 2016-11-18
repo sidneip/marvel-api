@@ -1,11 +1,11 @@
 <section>
   <div class="row">
     <div class="col-md-2">
-      <img class="img-responsive thumbnail" src="<%= character_image(@character_request) %>" width="128" height="128">
+      <img class="img-responsive thumbnail" src="<%= @character.thumbnail %>" width="128" height="128">
     </div>
     <div class="col-md-7">
       <b>Nome:</b> <%= @character.name %><br />
-      <b> Descrição: </b> <%= @character.description %>
+      <b> Descrição: </b> <%= @character.description.html_safe %>
     </div>
   </div>
 </section>
@@ -15,13 +15,15 @@
 <hr />
 
 <section>
+  <% @stories.each do |story| %>
   <div class="row">
     <div class="col-md-2">
-      <img class="img-responsive thumbnail" src="" width="128" height="128">
+      <img class="img-responsive thumbnail" src="<%= story.object[:thumbnail] %>" width="128" height="128">
     </div>
     <div class="col-md-7">
-      <b>Nome:</b> <br />
-      <b> Descrição: </b> 
+      <b>Nome: <%= story.object[:name] %></b> <br />
+      <b> Descrição: <%= story.object[:description] %></b> 
     </div>
   </div>
+  <% end %>
 </section>
