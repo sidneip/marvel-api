@@ -1,6 +1,7 @@
 class Api::CharactersController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   before_action :set_character, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :verify_authenticity_token
 
   # GET /api/characters
   # GET /api/characters.json
