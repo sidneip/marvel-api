@@ -19,7 +19,7 @@ class Api::CharactersControllerTest < ActionDispatch::IntegrationTest
   test 'should render character first in json respose' do
     get api_characters_url, as: :json
     body = JSON.parse @response.body
-    assert Character.first.name, body[0]['name']
+    assert Character.first.name, body['results'][0]['name']
   end
 
   test "should create api_character" do

@@ -1,13 +1,18 @@
 class Api::CharactersController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   before_action :set_character, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
 
   # GET /api/characters
   # GET /api/characters.json
   def index
-    @characters = Character.all
-    render json: @characters
+    @characters = Character.all.paginate page: params[:page]
+    render json: {
+      current_page: @characters.current_page,
+      per_page: @characters.per_page,
+      total: @characters.total_entries,
+      results: @characters
+    }
   end
 
   # GET /api/characters/1
