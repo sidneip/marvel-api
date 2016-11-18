@@ -1,0 +1,111 @@
+{
+	"variables": [],
+	"info": {
+		"name": "marvel",
+		"_postman_id": "cdad8544-0a66-5644-d0bd-9e6dabf584a8",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Characters",
+			"request": {
+				"url": "http://ec2-35-163-123-62.us-west-2.compute.amazonaws.com:81/api/characters?page=2",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Username",
+						"value": "sidnei",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"teste\"}"
+				},
+				"description": "Listar"
+			},
+			"response": []
+		},
+		{
+			"name": "Show Character",
+			"request": {
+				"url": "http://ec2-35-163-123-62.us-west-2.compute.amazonaws.com:81/api/characters/2",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Username",
+						"value": "sidnei",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"teste\"}"
+				},
+				"description": "Visualizar"
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Character",
+			"request": {
+				"url": "http://ec2-35-163-123-62.us-west-2.compute.amazonaws.com:81/api/characters/2",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Username",
+						"value": "sidnei",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"teste2\"}"
+				},
+				"description": "Editar"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Character",
+			"request": {
+				"url": "http://ec2-35-163-123-62.us-west-2.compute.amazonaws.com:81/api/characters/200",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Username",
+						"value": "sidnei",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"teste\"}"
+				},
+				"description": "Deletar"
+			},
+			"response": []
+		}
+	]
+}
