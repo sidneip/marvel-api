@@ -64,6 +64,6 @@ class Api::CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:name, :description)
+      params.require(:character).permit(:name, :description, :thumbnail, :code)
     end
 end
