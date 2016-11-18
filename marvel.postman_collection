@@ -106,6 +106,31 @@
 				"description": "Deletar"
 			},
 			"response": []
+		},
+		{
+			"name": "Create Character",
+			"request": {
+				"url": "http://ec2-35-163-123-62.us-west-2.compute.amazonaws.com:81/api/characters",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Username",
+						"value": "sidnei",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"teste\",\n\t\"description\": \"testando\",\n\t\"thumbnail\": \"http://teste.com.br\",\n\t\"code\": \"test\"\n}"
+				},
+				"description": "Adicionar"
+			},
+			"response": []
 		}
 	]
 }
